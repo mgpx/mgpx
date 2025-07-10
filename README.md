@@ -1,16 +1,36 @@
-# Olá! Eu sou o Mgpx 👋
+<h1 align="center">Olá, eu sou o Mgpx 👋</h1>
 
-- 🔭 Atualmente estou trabalhando com C#
-- 🌱 Estudando: Arquitetura de software, segurança em nuvem e performance
-- 💬 Pergunte-me sobre programação, ensino e integração de sistemas
-- ⚡ Curiosidade: Gosto de engenharia reversa
+<p align="center">
+  💻 Desenvolvedor focado em <strong>C#</strong> e arquitetura de software<br>
+  🔐 Entusiasta em <strong>segurança em nuvem</strong> e <strong>engenharia reversa</strong><br>
+  🧠 Curioso por <strong>performance, integração de sistemas</strong> e boas práticas de código
+</p>
 
-### 🐍 Snake game das minhas contribuições
+---
 
-![snake animation](https://github.com/mgpx/mgpx/blob/output/github-contribution-grid-snake.svg)
+### 🚀 Sobre mim
 
+- 🔭 Atualmente trabalhando com **C#** no desenvolvimento de sistemas robustos
+- 🌱 Estudando **arquitetura de software**, **segurança** e **alta performance**
+- 💬 Gosto de compartilhar conhecimento sobre **programação** e **design de sistemas**
+- ⚡ Curiosidade: Sou apaixonado por **engenharia reversa** e entender como as coisas funcionam por dentro
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mgpx&layout=compact)](https://github.com/mgpx)
+---
 
-📫 Como me encontrar:
-- GitHub: [mgpx](https://github.com/mgpx)
+### 📈 Minhas linguagens mais utilizadas
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mgpx&layout=compact&theme=tokyonight)](https://github.com/mgpx)
+
+---
+
+### 🐍 Snake das minhas contribuições
+
+<p align="center">
+  <img alt="Snake animation" src="https://github.com/mgpx/mgpx/blob/output/github-contribution-grid-snake.svg" />
+</p>
+
+---
+
+### 📫 Como me encontrar
+
+- GitHub: [@mgpx](https://github.com/mgpx)
