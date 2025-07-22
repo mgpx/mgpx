@@ -13,7 +13,7 @@
 - 🔭 Atualmente trabalhando com **C#** no desenvolvimento de sistemas robustos
 - 🌱 Estudando **arquitetura de software**, **segurança** e **alta performance**
 - 💬 Gosto de compartilhar conhecimento sobre **programação** e **design de sistemas**
-- ⚡ Curiosidade: Sou apaixonado por **engenharia reversa** e entender como as coisas funcionam por dentro
+- ⚡ Curiosidade: Gosto de **engenharia reversa** { 0x90 0xC3 }
 
 ---
 
