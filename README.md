@@ -4,7 +4,7 @@
   💻 <strong>C#</strong> como principal stack<br>
   📱 Desenvolvimento de apps com <strong>Java/Kotlin</strong> e <strong>Flutter</strong><br>
   ⚛️ Aprendendo <strong>React</strong><br>
-  📦 Uso de <strong>Docker</strong> no dia a dia<br>
+  📦 Pipelines baseadas em <strong>Docker</strong><br>
   🤖 Automação de processos<br>
   🕵️ Engenharia reversa por hobby  
 </p>
