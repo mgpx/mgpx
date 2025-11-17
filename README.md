@@ -1,19 +1,13 @@
-<h1 align="center">Olá, eu sou o Mgpx 👋</h1>
+<h1 align="center">Mgpx 👋</h1>
 
 <p align="center">
-  💻 Desenvolvedor focado em <strong>C#</strong> e arquitetura de software<br>
-  🔐 Entusiasta em <strong>segurança em nuvem</strong> e <strong>engenharia reversa</strong><br>
-  🧠 Curioso por <strong>performance, integração de sistemas</strong> e boas práticas de código
+  💻 <strong>C#</strong> como principal stack<br>
+  📱 Desenvolvimento de apps com <strong>Java/Kotlin</strong> e <strong>Flutter</strong><br>
+  ⚛️ Aprendendo <strong>React</strong><br>
+  📦 Uso de <strong>Docker</strong> no dia a dia<br>
+  🤖 Automação de processos<br>
+  🕵️ Engenharia reversa por hobby  
 </p>
-
----
-
-### 🚀 Sobre mim
-
-- 🔭 Atualmente trabalhando com **C#** no desenvolvimento de sistemas robustos
-- 🌱 Estudando **arquitetura de software**, **segurança** e **alta performance**
-- 💬 Gosto de compartilhar conhecimento sobre **programação** e **design de sistemas**
-- ⚡ Curiosidade: Gosto de **engenharia reversa** { 0x90 0xC3 }
 
 ---
 
