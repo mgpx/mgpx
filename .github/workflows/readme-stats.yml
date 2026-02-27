@@ -1,43 +1,37 @@
-name: Generate README Stats (no server) 📊
+name: Generate README Stats Cards 📊
 
 on:
   schedule:
-    - cron: "10 0 * * *"
+    - cron: "10 0 * * *" # todo dia 00:10 UTC
   workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   generate:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 5
 
     steps:
-      - name: Checkout (seu repo)
-        uses: actions/checkout@v4
-
-      - name: Checkout github-readme-stats
-        uses: actions/checkout@v4
+      - name: Generate top languages card
+        uses: soulteary/github-readme-stats-action@v1.0.0
         with:
-          repository: anuraghazra/github-readme-stats
-          path: grs
+          card: top-langs
+          options: 'username=${{ github.repository_owner }}&layout=compact&theme=tokyonight'
+          path: dist/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      # opcional (card principal)
+      - name: Generate stats card
+        uses: soulteary/github-readme-stats-action@v1.0.0
         with:
-          node-version: "20"
-
-      - name: Install deps (github-readme-stats)
-        working-directory: grs
-        run: npm ci
-
-      - name: Generate Top Langs SVG
-        env:
-          GH_USER: ${{ github.repository_owner }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/gen-readme-stats.mjs
+          card: stats
+          options: 'username=${{ github.repository_owner }}&show_icons=true&theme=tokyonight'
+          path: dist/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publicar no branch output
         uses: crazy-max/ghaction-github-pages@v3.1.0
