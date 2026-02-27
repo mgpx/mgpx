@@ -1,4 +1,4 @@
-name: Generate README Stats Cards 📊
+name: Generate README Stats (no server) 📊
 
 on:
   schedule:
@@ -12,7 +12,7 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 8
 
     steps:
       - name: Checkout (seu repo)
@@ -33,50 +33,11 @@ jobs:
         working-directory: grs
         run: npm ci
 
-      - name: Install Vercel CLI
-        run: npm i -g vercel@latest
-
-      - name: Start local server (vercel dev)
-        working-directory: grs
+      - name: Generate Top Langs SVG
         env:
+          GH_USER: ${{ github.repository_owner }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CACHE_SECONDS: "21600"
-          # Vercel dev não precisa login se você rodar sem "vercel pull"
-        run: |
-          nohup vercel dev --listen 9000 --yes > server.log 2>&1 &
-          echo $! > server.pid
-
-      - name: Wait for server
-        run: |
-          for i in {1..60}; do
-            if curl -fsS "http://localhost:9000/api?username=${{ github.repository_owner }}" > /dev/null; then
-              echo "Server is up!"
-              exit 0
-            fi
-            sleep 1
-          done
-          echo "Server did not start in time"
-          echo "---- server log ----"
-          cat grs/server.log || true
-          exit 1
-
-      - name: Generate cards
-        run: |
-          mkdir -p dist
-          curl -fsSL \
-            "http://localhost:9000/api/top-langs/?username=${{ github.repository_owner }}&layout=compact&theme=tokyonight" \
-            -o dist/top-langs.svg
-
-          curl -fsSL \
-            "http://localhost:9000/api?username=${{ github.repository_owner }}&show_icons=true&theme=tokyonight" \
-            -o dist/stats.svg
-
-      - name: Stop server
-        if: always()
-        run: |
-          if [ -f grs/server.pid ]; then
-            kill "$(cat grs/server.pid)" || true
-          fi
+        run: node scripts/gen-readme-stats.mjs
 
       - name: Publicar no branch output
         uses: crazy-max/ghaction-github-pages@v3.1.0
