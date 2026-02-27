@@ -1,0 +1,66 @@
+name: Generate README Stats Cards 📊
+
+on:
+  schedule:
+    - cron: "10 0 * * *" # todo dia 00:10 UTC (evita bater junto com o snake)
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Start github-readme-stats locally (Docker)
+        run: |
+          docker run -d --name grs -p 9000:9000 \
+            -e PORT=9000 \
+            -e CACHE_SECONDS=21600 \
+            -e GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" \
+            ghcr.io/anuraghazra/github-readme-stats:latest
+
+      - name: Wait for server
+        run: |
+          for i in {1..30}; do
+            if curl -fsS "http://localhost:9000/" > /dev/null; then
+              echo "Server is up!"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Server did not start in time" >&2
+          exit 1
+
+      - name: Generate cards (Top Langs + Stats)
+        run: |
+          mkdir -p dist
+
+          # Top Langs (o mesmo que você usava na Vercel)
+          curl -fsSL \
+            "http://localhost:9000/api/top-langs/?username=${{ github.repository_owner }}&layout=compact&theme=tokyonight" \
+            -o dist/top-langs.svg
+
+          # Card principal (opcional, mas geralmente a galera usa junto)
+          curl -fsSL \
+            "http://localhost:9000/api?username=${{ github.repository_owner }}&show_icons=true&theme=tokyonight" \
+            -o dist/stats.svg
+
+      - name: Stop container
+        if: always()
+        run: docker rm -f grs || true
+
+      - name: Publicar no branch output
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
