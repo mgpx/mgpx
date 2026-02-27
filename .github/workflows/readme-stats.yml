@@ -5,15 +5,14 @@ on:
     - cron: "10 0 * * *"
   workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   generate:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
 
     steps:
       - name: Checkout (seu repo)
@@ -29,27 +28,28 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
-          cache-dependency-path: grs/package-lock.json
 
-      - name: Install dependencies
+      - name: Install deps (github-readme-stats)
         working-directory: grs
         run: npm ci
 
-      - name: Start server
+      - name: Install Vercel CLI
+        run: npm i -g vercel@latest
+
+      - name: Start local server (vercel dev)
         working-directory: grs
         env:
-          PORT: "9000"
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CACHE_SECONDS: "21600"
+          # Vercel dev não precisa login se você rodar sem "vercel pull"
         run: |
-          nohup npm run start > server.log 2>&1 &
+          nohup vercel dev --listen 9000 --yes > server.log 2>&1 &
           echo $! > server.pid
 
       - name: Wait for server
         run: |
-          for i in {1..45}; do
-            if curl -fsS "http://localhost:9000/" > /dev/null; then
+          for i in {1..60}; do
+            if curl -fsS "http://localhost:9000/api?username=${{ github.repository_owner }}" > /dev/null; then
               echo "Server is up!"
               exit 0
             fi
@@ -63,12 +63,10 @@ jobs:
       - name: Generate cards
         run: |
           mkdir -p dist
-          # Top Langs (igual ao seu link antigo)
           curl -fsSL \
             "http://localhost:9000/api/top-langs/?username=${{ github.repository_owner }}&layout=compact&theme=tokyonight" \
             -o dist/top-langs.svg
 
-          # (Opcional) Card principal
           curl -fsSL \
             "http://localhost:9000/api?username=${{ github.repository_owner }}&show_icons=true&theme=tokyonight" \
             -o dist/stats.svg
