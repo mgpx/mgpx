@@ -13,7 +13,9 @@
 
 ### 📈 Minhas linguagens mais utilizadas
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mgpx&layout=compact&theme=tokyonight)](https://github.com/mgpx)
+<!-- [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mgpx&layout=compact&theme=tokyonight)](https://github.com/mgpx) -->
+[![Top Langs](https://raw.githubusercontent.com/mgpx/mgpx/output/top-langs.svg)](https://github.com/mgpx)
+
 
 ---
 
