@@ -30,30 +30,36 @@
 </p>
 -->
 
+### ⭐ Stack Principal
+
+[![Main Stack](https://skillicons.dev/icons?i=cs,dotnet,kotlin,flutter,react,docker,postgres)](https://skillicons.dev)
+
+---
+
 ### 🛠️ Tecnologias
 
 #### 💻 Linguagens
-[![Languages](https://skillicons.dev/icons?i=c,cs,cpp,dart,js,kotlin,py,ts,regex,wasm)](https://skillicons.dev)
+[![Languages](https://skillicons.dev/icons?i=c,cs,cpp,dart,js,kotlin,py,ts)](https://skillicons.dev)
 
-#### 🎨 Front-end
+#### ⚙️ Backend & Frameworks
+[![Backend](https://skillicons.dev/icons?i=dotnet,nodejs,prisma)](https://skillicons.dev)
+
+#### 🎨 Frontend
 [![Frontend](https://skillicons.dev/icons?i=html,react,tailwind,threejs,vite)](https://skillicons.dev)
 
 #### 📱 Mobile
 [![Mobile](https://skillicons.dev/icons?i=androidstudio,flutter,gradle)](https://skillicons.dev)
 
-#### ⚙️ Back-end / Frameworks
-[![Backend](https://skillicons.dev/icons?i=dotnet,nodejs,prisma)](https://skillicons.dev)
+#### 🗄️ Dados & Mensageria
+[![Data](https://skillicons.dev/icons?i=postgres,mysql,sqlite,redis,supabase,rabbitmq)](https://skillicons.dev)
 
-#### 🗄️ Bancos de dados / Infra de dados
-[![Databases](https://skillicons.dev/icons?i=mysql,postgres,sqlite,redis,supabase,rabbitmq)](https://skillicons.dev)
-
-#### ☁️ DevOps / Infra
+#### ☁️ DevOps & Infraestrutura
 [![DevOps](https://skillicons.dev/icons?i=docker,nginx,linux,ubuntu,windows,githubactions)](https://skillicons.dev)
 
 #### 🧰 Ferramentas
 [![Tools](https://skillicons.dev/icons?i=git,github,postman,powershell,idea,visualstudio,vscode,sentry)](https://skillicons.dev)
 
-#### 🔌 Hardware / Embarcados
+#### 🔌 Hardware & Embarcados
 [![Hardware](https://skillicons.dev/icons?i=arduino,raspberrypi)](https://skillicons.dev)
 ---
 
