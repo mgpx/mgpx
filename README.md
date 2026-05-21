@@ -18,9 +18,8 @@
 
 
 ---
-
+<!--
 ### 🛠️ Tecnologias
-
 <p align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="40"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="40"/>
@@ -29,7 +28,33 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="40"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40"/>
 </p>
+-->
 
+### 🛠️ Tecnologias
+
+#### 💻 Linguagens
+[![Languages](https://skillicons.dev/icons?i=c,cs,cpp,dart,js,kotlin,py,ts,regex,wasm)](https://skillicons.dev)
+
+#### 🎨 Front-end
+[![Frontend](https://skillicons.dev/icons?i=html,react,tailwind,threejs,vite)](https://skillicons.dev)
+
+#### 📱 Mobile
+[![Mobile](https://skillicons.dev/icons?i=androidstudio,flutter,gradle)](https://skillicons.dev)
+
+#### ⚙️ Back-end / Frameworks
+[![Backend](https://skillicons.dev/icons?i=dotnet,nodejs,prisma)](https://skillicons.dev)
+
+#### 🗄️ Bancos de dados / Infra de dados
+[![Databases](https://skillicons.dev/icons?i=mysql,postgres,sqlite,redis,supabase,rabbitmq)](https://skillicons.dev)
+
+#### ☁️ DevOps / Infra
+[![DevOps](https://skillicons.dev/icons?i=docker,nginx,linux,ubuntu,windows,githubactions)](https://skillicons.dev)
+
+#### 🧰 Ferramentas
+[![Tools](https://skillicons.dev/icons?i=git,github,postman,powershell,idea,visualstudio,vscode,sentry)](https://skillicons.dev)
+
+#### 🔌 Hardware / Embarcados
+[![Hardware](https://skillicons.dev/icons?i=arduino,raspberrypi)](https://skillicons.dev)
 ---
 
 ### 🐍 Snake das minhas contribuições
